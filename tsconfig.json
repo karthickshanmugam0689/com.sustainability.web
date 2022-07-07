@@ -1,0 +1,17 @@
+// In an ideal world this file would not be necessary
+// the 'composite' flag all of our tsconfig files are inheriting from the base config tell the language server,
+// that all packages are part of something bigger.
+// The language server will subsequently analyze all projects at the same time.
+// It will be able to kniow if a class defined in one package is used in another package.
+// You as developer will thus be able to find references all over the repo.
+// BUT: Some packages use ncc which doesn't work with composite. So they disable the flag.
+// This would mean we can't find references in these apps to symbols in any of our libs.
+// Tghuis file here fixes the issue. It exists solely for this purpose.
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+      "outDir": "./build"
+  },
+  "exclude": ["node_modules"],
+  "typeRoots": ["./node_modules/@types"]
+}

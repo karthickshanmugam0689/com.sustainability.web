@@ -1,0 +1,166 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Current TS File",
+            "type": "pwa-node",
+            "request": "launch",
+            "args": [
+                "${relativeFile}"
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**",
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "name": "Current TS Mocha File",
+            "type": "pwa-node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "${relativeFile}"
+            ],
+            "cwd": "${workspaceRoot}",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**",
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Jest Current File",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": [
+                "${relativeFile}"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "windows": {
+                "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+            }
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Jest All Files",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "windows": {
+                "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+            }
+        },
+        {
+            "name": "Mocha test for Eslint custom rules",
+            "type": "pwa-node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}/libraries/core/core-dev-linting",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "run",
+                "test"
+            ]
+        },
+        {
+            "name": "Launch SiteGen",
+            "type": "pwa-node",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/apps/sitegen/src/index.ts",
+                "once",
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceFolder}/apps/sitegen",
+            "protocol": "inspector",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**",
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "name": "Launch Directus Markdown CLI",
+            "type": "pwa-node",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/cli/directus-markdown-cli/src/index.ts",
+                "convert",
+                "*",
+                "*"
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceFolder}/cli/directus-markdown-cli",
+            "protocol": "inspector",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**",
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "name": "Launch Thumbnailer",
+            "type": "pwa-node",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/apps/thumbnailer/src/index.ts",
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceFolder}/apps/thumbnailer",
+            "protocol": "inspector",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**",
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "name": "Launch Sitegen via Runner-CLI",
+            "type": "pwa-node",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/cli/runner-cli/src/index.ts",
+                "run",
+                "sitegen"
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceFolder}/cli/runner-cli",
+            "protocol": "inspector",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**",
+                "<node_internals>/**"
+            ],
+        },
+    ]
+}

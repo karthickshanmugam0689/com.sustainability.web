@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "compile",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "Compile TypeScript",
+			"detail": "Compile all TypeScript packages in the repository",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"presentation": {
+				"reveal": "silent",
+				"clear": true,
+				"focus": true
+			}
+		}
+	]
+}

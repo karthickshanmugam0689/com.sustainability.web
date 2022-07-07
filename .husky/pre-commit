@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run lint-staged
+yarn lint-staged
+
+# Check if TS/JS files have change
+if [[ `git status --porcelain -- '*.ts' '*.tsx' '*.js' '*.jsx'` ]]; then
+    echo 'Changes detected on TS/JS files → running compilation…';
+    # Then compile the code using stream (but on failure run again yarn compile without stream)
+    yarn compile --stream --since HEAD && echo 'Pre-Commit Hook Successful (▰˘◡˘▰)' || yarn compile --since HEAD
+else
+    echo 'Pre-Commit Hook Successful. No changes on TS/JS files → skipping compilation ʕ•ᴥ•ʔ';
+fi
