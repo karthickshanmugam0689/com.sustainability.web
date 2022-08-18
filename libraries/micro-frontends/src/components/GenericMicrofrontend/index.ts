@@ -1,0 +1,1 @@
+export { GenericMicroFrontend } from './GenericMicrofrontend';

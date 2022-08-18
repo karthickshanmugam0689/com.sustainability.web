@@ -13,5 +13,5 @@
           "module": "CommonJS"
       }
   },
-  "include": ["./src"]
+  "include": ["./src", "../../apps/container/src/helpers"]
 }

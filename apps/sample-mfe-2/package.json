@@ -1,15 +1,13 @@
 {
-  "name": "@sustainability/container",
+  "name": "@sustainability/sample-mfe-2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@sustainability/core-ui-modules": "0.1.0",
-    "@sustainability/micro-frontends": "0.1.0"
+    "react-dom": "^18.2.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development BABEL_ENV=development webpack serve --mode=development --env development --open --hot --port 8000",
+    "start": "NODE_ENV=development BABEL_ENV=development webpack serve --mode=development --env development --open --hot --port 8002",
     "build": "NODE_ENV=production BABEL_ENV=production webpack --mode=production --env production --progress",
     "lint": "eslint src"
   },
